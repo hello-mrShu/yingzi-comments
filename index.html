@@ -28,12 +28,12 @@ a{color:#8a4b2f}
 footer{color:var(--sub);font-size:12px;margin-top:36px;border-top:1px solid var(--line);padding-top:12px}
 </style></head><body><div class="wrap">
 <h1>英子包子 · 抖音评论观察</h1>
-<div class="sub">数据区间 2023-01 至 2026-10 ｜ 抓取日 2026-11-01 ｜ 近三年 117 条有效评论（另有推广视频评论 218 条，单独统计）</div>
+<div class="sub">数据区间 2023-01 至 2026-10 ｜ 抓取日 2026-11-01 ｜ 近三年 110 条有效评论（另有推广视频评论 218 条，单独统计）</div>
 
 <div class="kpis">
-  <div class="kpi"><b>117</b><span>近三年有效评论</span></div>
+  <div class="kpi"><b>110</b><span>近三年有效评论</span></div>
   <div class="kpi"><b>44%</b><span>负面占比</span></div>
-  <div class="kpi"><b>29</b><span>提到预制/冷冻</span></div>
+  <div class="kpi"><b>28</b><span>提到预制/冷冻</span></div>
   <div class="kpi"><b>19</b><span>卫生安全类</span></div>
 </div>
 <h2>评论在说什么</h2>
@@ -104,7 +104,7 @@ footer{color:var(--sub);font-size:12px;margin-top:36px;border-top:1px solid var(
 <p class="note">这几条是团购/探店推广。评论区大量出现「推流到河北/河南/辽宁」「916 公里」——投放没做地域定向，曝光买给了吃不到的人。按你的要求，这些评论不计入上面的原话统计。</p>
 <h2>三条判断</h2>
 <div class="card">
-<p><b>1. 预制是核心矛盾。</b>29 条评论直接提到预制/冷冻/料理包，而且有人点名了「夏和餐饮」。</p>
+<p><b>1. 预制是核心矛盾。</b>28 条评论直接提到预制/冷冻/料理包，而且有人点名了「夏和餐饮」。</p>
 <p><b>2. 品牌记忆停在老店。</b>怀旧类评论的锚点几乎都是「一铁厂门口」，不是现在的门店。</p>
 <p><b>3. 声量极小、差评密度极高。</b>近三年相关视频只有 7 条、公开评论约 350 条——线上几乎没人讨论，一讨论就是失望。</p>
 </div>
@@ -113,7 +113,7 @@ footer{color:var(--sub);font-size:12px;margin-top:36px;border-top:1px solid var(
 <footer>夏和餐饮 · 英子包子品牌评论调研 ｜ 数据仅供内部演示</footer>
 </div>
 <script>
-const D={"labels": [["其他", 31], ["预制质疑", 29], ["卫生安全", 19], ["怀旧对比", 9], ["口味差", 9], ["现做期待", 5], ["口味好", 4], ["表情/无内容", 4], ["服务", 3], ["推流/外地", 2], ["门店/经营", 2]], "months": ["2023-02", "2024-08", "2025-02", "2025-07", "2025-10", "2026-02", "2026-03", "2026-04", "2026-09", "2026-10"], "month_counts": [1, 1, 1, 1, 1, 1, 105, 2, 1, 3], "neg": 51, "pos": 4, "neu": 62};
+const D={"labels": [["预制质疑", 28], ["其他", 28], ["卫生安全", 19], ["怀旧对比", 8], ["口味差", 7], ["现做期待", 5], ["口味好", 4], ["表情/无内容", 4], ["服务", 3], ["推流/外地", 2], ["门店/经营", 2]], "months": ["2026-03", "2026-04", "2026-09", "2026-10"], "month_counts": [105, 2, 1, 2], "neg": 48, "pos": 4, "neu": 58};
 new Chart(document.getElementById('lab'),{type:'bar',data:{labels:D.labels.map(x=>x[0]),datasets:[{data:D.labels.map(x=>x[1]),backgroundColor:'#b4472f'}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{beginAtZero:true,grid:{color:'#eee'}},y:{grid:{display:false}}}}});
 new Chart(document.getElementById('sen'),{type:'doughnut',data:{labels:['负面','正面','中性'],datasets:[{data:[D.neg,D.pos,D.neu],backgroundColor:['#b4472f','#3f7d54','#c9c2b8']}]},options:{plugins:{legend:{position:'bottom'}}}});
 new Chart(document.getElementById('trend'),{type:'bar',data:{labels:D.months,datasets:[{label:'评论数',data:D.month_counts,backgroundColor:'#8a6a2f'}]},options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}});
