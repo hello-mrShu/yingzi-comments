@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>英子包子 · 抖音评论观察</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root{--bg:#faf8f5;--ink:#1d1c1a;--sub:#6b6560;--line:#e6e0d8;--red:#b4472f;--green:#3f7d54;--gold:#8a6a2f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 -apple-system,"PingFang SC","Helvetica Neue",sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:28px 18px 60px}
+h1{font-size:26px;margin:0 0 6px;letter-spacing:-.5px}
+.sub{color:var(--sub);font-size:13px;margin-bottom:22px}
+h2{font-size:18px;margin:34px 0 12px;padding-left:10px;border-left:3px solid var(--red)}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}
+.kpi b{display:block;font-size:26px;line-height:1.2}
+.kpi span{color:var(--sub);font-size:12px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:12px}
+.quote{border-left:3px solid var(--line);padding:10px 12px;margin:10px 0;background:#fff;border-radius:0 8px 8px 0}
+.q-neg{border-color:var(--red)} .q-pos{border-color:var(--green)} .q-neu{border-color:#bbb}
+.qt{font-size:15px}
+.qm{color:var(--sub);font-size:12px;margin-top:6px}
+.chip{background:#f2ece4;border-radius:20px;padding:2px 8px;font-size:11px;color:#6b5a3e}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line)}
+a{color:#8a4b2f}
+.note{background:#f6f1e8;border-radius:10px;padding:12px;font-size:13px;color:#5c5245}
+footer{color:var(--sub);font-size:12px;margin-top:36px;border-top:1px solid var(--line);padding-top:12px}
+</style></head><body><div class="wrap">
+<h1>英子包子 · 抖音评论观察</h1>
+<div class="sub">数据区间 2023-01 至 2026-10 ｜ 抓取日 2026-11-01 ｜ 近三年 117 条有效评论（另有推广视频评论 218 条，单独统计）</div>
+
+<div class="kpis">
+  <div class="kpi"><b>117</b><span>近三年有效评论</span></div>
+  <div class="kpi"><b>44%</b><span>负面占比</span></div>
+  <div class="kpi"><b>29</b><span>提到预制/冷冻</span></div>
+  <div class="kpi"><b>19</b><span>卫生安全类</span></div>
+</div>
+<h2>评论在说什么</h2>
+<div class="card"><canvas id="lab" height="230"></canvas></div>
+<h2>情绪：说坏话的是多数，但不是骂街</h2>
+<div class="card"><canvas id="sen" height="210"></canvas></div>
+<h2>评论都发生在什么时候</h2>
+<div class="card"><canvas id="trend" height="180"></canvas></div>
+<h2>评论原话（按点赞排序）</h2>
+<div class="card"><div class="quote q-neg">
+      <div class="qt">我也吃过好几次 和你感受一样的  剩的 不是当天现做的</div>
+      <div class="qm"><span class="chip">卫生安全</span> 猫猫家 · 2026-03-01 · 赞 12</div>
+    </div><div class="quote q-neu">
+      <div class="qt">现在的英子包子，不是以前的包子了。</div>
+      <div class="qm"><span class="chip">怀旧对比</span> 无所畏惧 · 2026-03-01 · 赞 10</div>
+    </div><div class="quote q-neu">
+      <div class="qt">对吧，外面早餐摊菜包1.5一个，根本不会是这种味道</div>
+      <div class="qm"><span class="chip">其他</span> 一个小马人 · 2026-03-01 · 赞 9</div>
+    </div><div class="quote q-neg">
+      <div class="qt">英子包子所有东西都不是现做的，工厂在林里路，好像叫夏和餐饮吧？不太记得了，反正全是预制冷冻配送的，包括卤蛋。汇成上东那家，以前我经常叫外卖，好几次外卖的菜包子中间都没熟，虽然退了款，但是早餐就没法吃了。后来再也不买了。</div>
+      <div class="qm"><span class="chip">卫生安全</span> Ada🌸 · 2026-03-01 · 赞 6</div>
+    </div><div class="quote q-pos">
+      <div class="qt">以前很喜欢去英子的早餐，味道好又新鲜。
+自从前两年看到他们的豆浆是用超大号塑料袋倒出来加热的，包子比原来小2圈不说，也是成品拿出来加热的。。咬一口里面的菜都不是新鲜的那种绿色了。现在已经好几年不去了。味道变了，包子还是当天现做的好吃。</div>
+      <div class="qm"><span class="chip">预制质疑</span> 挽风 · 2026-03-02 · 赞 5</div>
+    </div><div class="quote q-neu">
+      <div class="qt">我买的三津包子，买了两个红糖馒头，里面还是冰块，我当时上班的路上就扔了没吃，过了几天我去买，我说你们给我拿蒸透的，不要给我那种没有蒸熟的，店员不耐烦的说，我们从来没有卖过没有蒸熟的，真是被气得无语，将近半年我都不买他家的东西，我只是反应让她们不要急尽量注意，做为消费者我会无缘无故说这些吗</div>
+      <div class="qm"><span class="chip">服务</span> 💖星辰 · 2026-03-02 · 赞 4</div>
+    </div><div class="quote q-neg">
+      <div class="qt">早就不是之前的味道了、后期买了两次菜包基本上不熟[捂脸]好几年没买过了</div>
+      <div class="qm"><span class="chip">卫生安全</span> 马鞍山时代名品-佳山路 · 2026-03-01 · 赞 4</div>
+    </div><div class="quote q-neg">
+      <div class="qt">只要他卖的东西没变质，你投诉也没用，吃新鲜的自己做，要么你运气好刚好遇到他蒸熟下笼</div>
+      <div class="qm"><span class="chip">卫生安全</span> 旺旺小福仙 · 2026-03-03 · 赞 4</div>
+    </div><div class="quote q-neg">
+      <div class="qt">三津灌汤包都是连锁店，预制冻货</div>
+      <div class="qm"><span class="chip">预制质疑</span> 随遇而安 · 2026-03-03 · 赞 3</div>
+    </div><div class="quote q-pos">
+      <div class="qt">以前很喜欢他家菜包子，酒酿和锅贴，你猜后来怎么不去了[看]</div>
+      <div class="qm"><span class="chip">口味好</span> 不爱吃青椒的小汤 · 2026-03-01 · 赞 3</div>
+    </div><div class="quote q-neu">
+      <div class="qt">吃不到当年那种口味了，还有当年的入妙蛋糕，都是杠把子</div>
+      <div class="qm"><span class="chip">怀旧对比</span> A_自家养殖螃蟹价格优惠 · 2026-03-01 · 赞 3</div>
+    </div><div class="quote q-neg">
+      <div class="qt">看菜的颜色，韭菜不绿肯定是隔夜的，我去年买了一次给我吃吐了</div>
+      <div class="qm"><span class="chip">卫生安全</span> 赤月养娃版 · 2026-03-01 · 赞 2</div>
+    </div><div class="quote q-neg">
+      <div class="qt">十年前就不吃了，预制菜，当时吃套餐还吃出过两次异物</div>
+      <div class="qm"><span class="chip">卫生安全</span> 麻油果冻 · 2026-03-01 · 赞 2</div>
+    </div><div class="quote q-neu">
+      <div class="qt">我最生气的点，是我给我妈买的，他本来感冒咳嗽好几天，吃什么都没味，突然想吃菜包子，我去那家店来回三公里多，买回来给她吃一口就吐了，我心里这个难过</div>
+      <div class="qm"><span class="chip">推流/外地</span> 一个小马人 · 2026-03-01 · 赞 2</div>
+    </div><div class="quote q-neg">
+      <div class="qt">我们家只要说没熟，决对这次给包换，能再次光临，也是对本店的认可，有的时候，他们说没事，又不是多少钱，我说那不行，是我的错</div>
+      <div class="qm"><span class="chip">卫生安全</span> 村上食，早餐。放心店 · 2026-03-08 · 赞 2</div>
+    </div><div class="quote q-neu">
+      <div class="qt">我们外卖和店里都是一视同仁的，外卖更是格外小心，怕一不小心给个差评啥的[捂脸]</div>
+      <div class="qm"><span class="chip">其他</span> 七月🍀 · 2026-03-06 · 赞 2</div>
+    </div><div class="quote q-neg">
+      <div class="qt">@nHeXane 真难吃吧</div>
+      <div class="qm"><span class="chip">口味差</span> Lzzzr.O · 2026-03-02 · 赞 1</div>
+    </div><div class="quote q-neg">
+      <div class="qt">我就去过一次吃了碗馄饨，太难吃了，营业员说馄饨不是现包的，是公司包好冷冻了送过来，再也不去了。</div>
+      <div class="qm"><span class="chip">预制质疑</span> 暖心女帝 · 2026-03-01 · 赞 1</div>
+    </div></div>
+<h2>推广视频：花了钱，投给了外地人</h2>
+<table><thead><tr><th>视频</th><th>赞</th><th>评论</th><th>发布</th></tr></thead><tbody><tr><td><a href='https://www.douyin.com/video/7603703594089834091'>英子包子和雪碧出了专属套餐～超值！小</a></td><td>4715</td><td>103</td><td>2026-02-07</td></tr><tr><td><a href='https://www.douyin.com/video/7603262782633625273'>找到一家非常适合我的吃辣程度的餐馆#</a></td><td>3542</td><td>72</td><td>2026-02-05</td></tr><tr><td><a href='https://www.douyin.com/video/7227710884708224260'>开了30年的英子包子也与时俱进了，活</a></td><td>187</td><td>47</td><td>2023-04-30</td></tr></tbody></table>
+<p class="note">这几条是团购/探店推广。评论区大量出现「推流到河北/河南/辽宁」「916 公里」——投放没做地域定向，曝光买给了吃不到的人。按你的要求，这些评论不计入上面的原话统计。</p>
+<h2>三条判断</h2>
+<div class="card">
+<p><b>1. 预制是核心矛盾。</b>29 条评论直接提到预制/冷冻/料理包，而且有人点名了「夏和餐饮」。</p>
+<p><b>2. 品牌记忆停在老店。</b>怀旧类评论的锚点几乎都是「一铁厂门口」，不是现在的门店。</p>
+<p><b>3. 声量极小、差评密度极高。</b>近三年相关视频只有 7 条、公开评论约 350 条——线上几乎没人讨论，一讨论就是失望。</p>
+</div>
+<h2>方法与边界</h2>
+<p class="note">采集方式：抖音关键词搜索 + 视频详情页评论，去重后入库；同一评论只保留一条。评论总数含子回复，本报告只统计主评论，故覆盖率约 70%。样本为公开评论，不代表全部顾客；标签由关键词规则自动打，个别长评论可能归类偏差。</p>
+<footer>夏和餐饮 · 英子包子品牌评论调研 ｜ 数据仅供内部演示</footer>
+</div>
+<script>
+const D={"labels": [["其他", 31], ["预制质疑", 29], ["卫生安全", 19], ["怀旧对比", 9], ["口味差", 9], ["现做期待", 5], ["口味好", 4], ["表情/无内容", 4], ["服务", 3], ["推流/外地", 2], ["门店/经营", 2]], "months": ["2023-02", "2024-08", "2025-02", "2025-07", "2025-10", "2026-02", "2026-03", "2026-04", "2026-09", "2026-10"], "month_counts": [1, 1, 1, 1, 1, 1, 105, 2, 1, 3], "neg": 51, "pos": 4, "neu": 62};
+new Chart(document.getElementById('lab'),{type:'bar',data:{labels:D.labels.map(x=>x[0]),datasets:[{data:D.labels.map(x=>x[1]),backgroundColor:'#b4472f'}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{beginAtZero:true,grid:{color:'#eee'}},y:{grid:{display:false}}}}});
+new Chart(document.getElementById('sen'),{type:'doughnut',data:{labels:['负面','正面','中性'],datasets:[{data:[D.neg,D.pos,D.neu],backgroundColor:['#b4472f','#3f7d54','#c9c2b8']}]},options:{plugins:{legend:{position:'bottom'}}}});
+new Chart(document.getElementById('trend'),{type:'bar',data:{labels:D.months,datasets:[{label:'评论数',data:D.month_counts,backgroundColor:'#8a6a2f'}]},options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}});
+</script></body></html>
